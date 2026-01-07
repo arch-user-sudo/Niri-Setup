@@ -1,0 +1,176 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Ubuntu Mono, monospace;
+    font-size: 15px
+}
+
+window#waybar {
+    background-color: #000000;
+    border: none;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 4px
+    }
+window#waybar.hidden {
+    opacity: 0
+    }
+window#waybar.empty {
+    background-color: transparent;
+    }
+window#waybar.solo {
+    background-color: #FFFFFF
+    }
+window#waybar.termite {
+    background-color: #3F3F3F
+    }
+window#waybar.chromium {
+    background-color: #000000;
+    border: none
+    }
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#window,
+
+#cpu {
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    padding: 0 10px
+    }
+#cpu:hover {
+    background-color: rgba(256, 256, 256, 0.10);
+    border-radius: 4px
+    }
+
+#memory {
+    color: #ffffff;
+    background-color: transparent;
+    padding: 0 6px;
+    border: none
+    }
+#memory:hover {
+    background-color: rgba(256, 256, 256, 0.10);
+    border-radius: 4px
+    }
+
+#custom-network2 {
+background-color: transparent; 
+color: #ffffff;
+padding: 0 5px; 
+border-radius: 10px;
+font-size: 16px;
+    }
+#custom-network2:hover {
+    background-color: rgba(256, 256, 256, 0.10);
+    border-radius: 4px
+    }
+
+#custom-temprature {
+background-color: transparent; 
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 5px;
+font-size: 16px;
+    }
+#custom-temprature:hover {
+     background-color: rgba(256, 256, 256, 0.10);
+     border-radius: 4px
+    }
+
+#pulseaudio {
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    padding: 0 6px
+    }
+#pulseaudio:hover {
+    background-color: rgba(256, 256, 256, 0.10);
+    border-radius: 4px
+    }
+#pulseaudio.muted {
+    background-color: rgba(256, 256, 256, 0.10);
+    padding: 0 10px;
+    border-radius: 4px
+    }
+
+#tray {
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 0 10px
+    }
+#tray > .passive {
+    -gtk-icon-effect: dim;
+    }
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b
+    }
+
+#custom-arch {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 0 10px
+    }
+
+#custom-arch:hover {
+    background-color: rgba(256, 256, 256, 0.10);
+    border-radius: 4px
+    }
+
+#custom-bluetooth {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 0 10px
+    }
+
+#custom-bluetooth:hover  {
+    background-color: rgba(256, 256, 256, 0.10);
+    border-radius: 4px
+    }
+
+#custom-gpu_usage  {
+background-color: transparent; 
+color: #ffffff;
+padding: 0 5px; 
+border-radius: 10px;
+font-size: 16px;
+    }
+#custom-gpu_usage:hover  {
+    background-color: rgba(256, 256, 256, 0.10);
+    border-radius: 4px
+    }
+#custom-sysusage  {
+background-color: transparent; 
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 5px;
+font-size: 16px
+}
+#custom-sysusage:hover  {
+  background-color: rgba(256, 256, 256, 0.10);
+  border-radius: 4px
+}
+#workspaces {
+background-color: #222222; 
+color: #DD6C00;
+padding: 0 10px; 
+border-radius: 5px;
+    }
+

@@ -1,0 +1,194 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "Ubuntu Regular";
+    font-size: 15px
+}
+
+window#waybar {
+    background-color: rgba(17, 17, 17, 0.7);
+    border: none;
+    color: #ffffff;
+    padding: 0 0px;
+    border-radius: 4px;
+    transition-property: background-color;
+    transition-duration: .5s
+    }
+window#waybar.hidden {
+    opacity: 0 
+    }
+window#waybar.empty {
+    background-color: transparent
+    }
+window#waybar.solo {
+    background-color: #FFFFFF
+    }
+window#waybar.termite {
+    background-color: #3F3F3F
+    }
+window#waybar.chromium {
+    background-color: #000000;
+    border: none
+    }
+
+#workspaces button {
+    padding: 0 4px;
+    border-radius: 0;
+    color: #ffffff;
+    margin: 0 0px;
+     background-color: transparent
+    }
+
+#workspaces button:hover {
+    transition: none;
+    border: none;
+    background: transparent;
+    border-radius: 4px
+    }
+#workspaces button.active {
+    background-color: #ffffff;
+    border: 2px solid black;
+    color: black;
+    border-radius: 8px;
+     padding: 0 4px;
+    }
+#workspaces button.urgent {
+    color: #eb4d4b
+    }
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#window,
+
+#workspaces {
+    color: transparent;
+    margin: 0 0px;
+    border: none;
+    background-color: transparent;
+    padding: 0 0px
+    }
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0
+    }
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0
+    }
+
+#clock {
+background-color: #ffffff; 
+color: #000000;
+padding: 0 10px; 
+border-radius: 5px;
+    }
+#clock:hover {
+    background-color: rgba(256, 256, 256, 0.10);
+    border-radius: 4px
+    }
+
+#network {
+background-color: transparent; 
+border-bottom: 2px solid white;
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 5px;
+}
+#network:hover {
+    color: #ffffff;
+    background-color: rgba(256, 256, 256, 0.10);
+    border-radius: 4px
+    }
+#network.disconnected {
+    background-color: transparent
+    } 
+
+#tray {
+background-color: transparent; 
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 5px;
+    }
+#tray > .passive {
+    -gtk-icon-effect: dim;
+    }
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+    }
+
+#custom-arch {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 0 10px;
+    }
+
+#custom-arch:hover {
+    background-color: transparent
+    }
+
+#mpris {
+background-color: transparent; 
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 5px;
+border-bottom: 2px solid white;
+font-family: "Ubunto Regular, Noto Font Emoji"
+}
+
+#custom-cava { 
+background-color: transparent; 
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 5px;
+
+ }
+ 
+ #custom-arch {
+background-color: transparent; 
+color: #0283fc;
+padding: 0 10px; 
+border-radius: 5px;
+    }
+    
+    #custom-bluetooth {
+background-color: transparent; 
+color: #ffffff;
+padding: 0 10px; 
+border-bottom: 2px solid white;
+border-radius: 5px;
+    }
+    
+    #pulseaudio {
+ background-color: transparent;; 
+ border-bottom: 2px solid white;
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 5px;
+
+    }
+#pulseaudio:hover {
+    background-color: rgba(256, 256, 256, 0.7);
+    border-radius: 4px;
+    color: #000000; 
+    }
+#pulseaudio.muted {
+    background-color: rgba(256, 256, 256, 0.10);
+    padding: 0 10px;
+    border-radius: 4px
+    }

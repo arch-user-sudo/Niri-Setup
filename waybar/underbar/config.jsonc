@@ -1,0 +1,139 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 26, // Waybar height (to be removed for auto height)
+    "width": 1920, // Waybar width
+    "spacing": 1, // Gaps between modules (4px)
+    "margin-bottom": 0,
+    "margin-top": 0,
+    // Choose the order of the modules
+    "modules-left": [
+    ],
+    "modules-center": [
+        "custom/temprature",
+        "custom/network2",
+        "custom/sysusage",
+        "custom/gpu_usage"
+      
+    ],
+    "modules-right": [
+    
+    ],
+    // Modules configuration//
+         "hyprland/workspaces":{
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": true,
+         "format": "{icon}",
+         "format-icons": {
+             "urgent": "",
+             "active": "",
+             "default": "●"
+             },
+         "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
+      },
+     },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10,
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+     },
+
+    "cpu": {
+        "format": "[CPU: {usage}% RAM: {}%]",
+        "interval": 1,
+        "tooltip": false,
+        "on-click": "kitty -e sh -c 'fastfetch; exec $SHELL -i'"
+    },
+
+    "memory": {
+        "format": "RAM: {}%]",
+        "on-click": "kitty -e btop",
+        "interval": 1
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 10, // %, can be a float
+        "format": " {volume}%",
+        "format-bluetooth": "{volume}%  {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "Muted   {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [" "," ", " ", " "]
+        },
+        "on-click": "kitty -e pulsemixer"
+    },
+
+    "custom/network2": {
+        "exec": "~/.config/waybar/scripts/network2.sh",
+        "format": "{}",
+        "tooltip": false
+        
+    },
+   
+    "custom/temprature": {
+        "exec": "~/.config/waybar/scripts/temprature2.sh",
+        "format": "{}",
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "custom/arch":  {
+        "format": " ", 
+        "tooltip": false,
+        "on-click": "bash ~/.config/waybar/scripts/openclose.sh"
+    },
+
+"custom/bluetooth": {
+        "exec": "~/.config/waybar/scripts/bluetooth_battery.sh",
+        "interval": 1,
+        "tooltip": false,
+        "on-click": "kitty -e bluetuith"
+   }, 
+
+"custom/gpu_usage": {
+         "exec": "~/.config/waybar/scripts/gpu_usage.sh",
+         "interval": 1,
+         "format": "[ {} ]",
+         "tooltip": false
+    },
+
+  "custom/sysusage": {
+         "exec": "~/.config/waybar/scripts/sysusage.sh",
+         "interval": 1,
+         "tooltip": false,
+         "on-click": "kitty -e btop"
+  },
+
+
+"wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "icon-theme": "Numix-Circle",
+    "tooltip-format": "{title}",
+    "on-click": "minimize-raise",
+    "on-click-middle": "close"
+}
+                  
+}
