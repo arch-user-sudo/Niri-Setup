@@ -258,8 +258,8 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-         left 10
-         right 10
+         left 0
+         right 0
          top 25
          bottom 25
     }
@@ -280,7 +280,7 @@ background-color "#00000000"
 
 spawn-sh-at-startup "/usr/lib/xdg-desktop-portal-gtk"
 spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-sh-at-startup "wbg -s /home/lynch/3840x2160.jpg"
+spawn-sh-at-startup "wbg -s /home/lynch/1.png"
 spawn-sh-at-startup "waybar"
 // spawn-sh-at-startup "xwayland-satellite"
 

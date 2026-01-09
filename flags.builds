@@ -1,0 +1,11 @@
+Niri Build flags: 
+
+ RUSTFLAGS="-C target-cpu=native -C panic=abort" \
+                                   cargo build --release --no-default-features && \
+                                   strip target/release/niri
+
+Alacritty Build Flags: 
+
+RUSTFLAGS="-C target-cpu=native -C panic=abort" \
+cargo build --release --no-default-features --features "wayland"
+strip target/release/alacritty
