@@ -26,8 +26,8 @@ alias optimize='sudo fstrim -v /'
 alias dwll='slstatus -s | dwl'
 alias qute='nohup firejail qutebrowser &'
 alias screenshot='bash ~/screenshot.sh'
-alias wp='nohup python ~/wallpaper.py &'
-alias launch='bash ~/fzflauncher.sh'
+alias wpp='nohup python ~/wallpaper.py &'
+alias menu='bash ~/fzflauncher.sh'
 alias zenbrowser='nohup flatpak run app.zen_browser.zen >/dev/null 2>&1 & disown'
 alias steam='nohup flatpak run com.valvesoftware.Steam >/dev/null 2>&1 & disown'
 
@@ -41,15 +41,7 @@ function cd
     end
 end
 
-function pdff
-    set -l file (find . -type f -iname "*.pdf" | sed 's|^\./||' | fzf --select-1 --exit-0)
-    if test -n "$file"
-        zathura "$file" >/dev/null 2>&1 &
-        disown
-    end
-end
-
-function img
+function imgg
     set -l files (ls -1 | string match -r '.*\.(png|jpg|jpeg|webp|gif)$' | fzf -m)
 
     if test (count $files) -gt 0
@@ -64,7 +56,7 @@ function pdf
 
     # Open fzf with live PDF selection
     printf "%s\n" $files | fzf --prompt="PDF > " \
-        --bind "enter:execute-silent(env DISPLAY=$DISPLAY setsid zathura "{}" >/dev/null 2>&1 &)"
+        --bind "enter:execute-silent(nohup zathura "{}" &)"
 end
 
 function wp
@@ -73,7 +65,16 @@ function wp
 
     # Open fzf with live wallpaper selection
     printf "%s\n" $files | fzf --prompt="Wallpaper > " \
-        --bind "enter:execute-silent(pkill -f '^wbg' >/dev/null 2>&1; nohup wbg -s "{}" >/dev/null 2>&1 &)"
+        --bind "enter:execute-silent(pkill -f '^wbg' >/dev/null 2>&1; nohup wbg -s "{}" &)"
+end
+
+function img
+    # List all images in the current directory
+    set -l files (find . -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" -o -iname "*.gif" \) -print)
+
+    # Open fzf with live wallpaper selection
+    printf "%s\n" $files | fzf --prompt="View > " \
+        --bind "enter:execute-silent(nohup imv-dir "{}" &)"
 end
 
 fish_config theme choose seaweed
