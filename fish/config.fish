@@ -26,7 +26,7 @@ alias optimize='sudo fstrim -v /'
 alias dwll='slstatus -s | dwl'
 alias qute='nohup firejail qutebrowser &'
 alias screenshot='bash ~/screenshot.sh'
-alias wpp='nohup python ~/wallpaper.py &'
+alias wp='nohup python ~/wallpaper.py &'
 alias launch='bash ~/fzflauncher.sh'
 alias zenbrowser='nohup flatpak run app.zen_browser.zen >/dev/null 2>&1 & disown'
 alias steam='nohup flatpak run com.valvesoftware.Steam >/dev/null 2>&1 & disown'
@@ -59,24 +59,12 @@ function img
 end
 
 function wp
-    # Loop to keep fzf open for multiple selections
-    while true
-        # Select a single image from current directory
-        set -l file (ls -1 | string match -r '.*\.(png|jpg|jpeg|webp|gif)$' \
-            | fzf --select-1 --exit-0 --prompt="Wallpaper > ")
+    # List all images in the current directory
+    set -l files (find . -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" -o -iname "*.gif" \) -print)
 
-        # Exit loop if nothing selected (ESC)
-        if test -z "$file"
-            break
-        end
-
-        # Kill previous wbg instance
-        pkill -f '^wbg' >/dev/null 2>&1; or true
-
-        # Set new wallpaper detached
-        wbg -s "$file" >/dev/null 2>&1 &
-        disown
-    end
+    # Open fzf with live wallpaper selection
+    printf "%s\n" $files | fzf --prompt="Wallpaper > " \
+        --bind "enter:execute-silent(pkill -f '^wbg' >/dev/null 2>&1; nohup wbg -s '{}' >/dev/null 2>&1 &)"
 end
 
 fish_config theme choose seaweed
