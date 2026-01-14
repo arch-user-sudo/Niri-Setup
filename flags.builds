@@ -4,8 +4,47 @@ Niri Build flags:
                                    cargo build --release --no-default-features && \
                                    strip target/release/niri
 
+RUSTFLAGS="-C target-cpu=native" \
+CARGO_PROFILE_RELEASE_LTO=true \
+CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
+CARGO_PROFILE_RELEASE_PANIC=abort \
+cargo build --release --no-default-features && \
+strip target/release/niri
+
+RUSTFLAGS="-C target-cpu=native -C opt-level=3" \
+CARGO_PROFILE_RELEASE_LTO=fat \
+CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
+CARGO_PROFILE_RELEASE_PANIC=abort \
+CARGO_PROFILE_RELEASE_DEBUG=false \
+cargo build --release --no-default-features && \
+strip target/release/niri
+
+
+
+
 Alacritty Build Flags: 
 
 RUSTFLAGS="-C target-cpu=native -C panic=abort" \
 cargo build --release --no-default-features --features "wayland"
 strip target/release/alacritty
+
+RUSTFLAGS="-C target-cpu=native -C panic=abort" \
+cargo build --release --no-default-features --features "wayland"
+strip target/release/alacritty
+
+
+Rio Build Flags 
+
+RUSTFLAGS="-C target-cpu=native -C opt-level=3" \
+                       CARGO_PROFILE_RELEASE_LTO=fat \
+                       CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
+                       CARGO_PROFILE_RELEASE_PANIC=abort \
+                       CARGO_PROFILE_RELEASE_DEBUG=false \
+                       cargo build --release --no-default-features && \
+                       strip target/release/niri
+
+
+
+
+
+Used popsicle-bin to write iso and img files to USB. (RUfus-like tool) 

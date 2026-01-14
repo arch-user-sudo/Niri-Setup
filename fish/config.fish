@@ -1,3 +1,10 @@
+# Auto-start niri on first TTY login
+#if status is-login
+#    if test -z "$WAYLAND_DISPLAY" -a (tty) = /dev/tty1
+#        exec niri & disown
+#    end
+#end
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
@@ -27,11 +34,12 @@ alias dwll='slstatus -s | dwl'
 alias qute='nohup firejail qutebrowser &'
 alias screenshot='bash ~/screenshot.sh'
 alias wpp='nohup python ~/wallpaper.py &'
-alias menu='bash ~/fzflauncher.sh'
+alias app='bash ~/fzflauncher.sh'
 alias zenbrowser='nohup flatpak run app.zen_browser.zen >/dev/null 2>&1 & disown'
 alias steam='nohup flatpak run com.valvesoftware.Steam >/dev/null 2>&1 & disown'
-
-fastfetch
+alias x='xwayland-satellite & disown'
+#fastfetch
+macchina -t Beryllium
 
 set -g fish_greeting ""
 

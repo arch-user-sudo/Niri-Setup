@@ -63,8 +63,8 @@ input {
     }
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
-    // warp-mouse-to-focus
-     // focus-follows-mouse
+     //   warp-mouse-to-focus
+       focus-follows-mouse
 
 
      //Focus windows and outputs automatically when moving the mouse into them.
@@ -297,7 +297,7 @@ spawn-sh-at-startup "waybar"
 
 overview {
     zoom 0.6
-    backdrop-color "#262626"
+    backdrop-color "#000000"
 
     workspace-shadow {
         // off
@@ -321,6 +321,11 @@ layer-rule {
 layer-rule {
   match namespace="waybar"
   place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="alacritty"
+  place-within-backdrop true 
 }
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
