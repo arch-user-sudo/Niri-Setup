@@ -1,0 +1,104 @@
+(defwindow mybar
+	:windowtype "dock"
+	:wm-ignore false
+	:monitor 0
+	:exclusive true
+	:geometry (geometry
+				:width "100%" :height "0%"; this doesn't work... :(
+				:anchor "top center"
+				)
+	:reserve (struts :side "top" :distance "60%")
+	(bar))
+
+(defwidget bar []
+	(centerbox
+		:class "bar-main"
+		:orientation "horizontal"
+		:hexpand false
+		:space-evenly true
+		:spacing "5"
+		(logo)		
+		(time-date)
+		(info)
+		))
+
+(defwidget info []
+	(box
+		:class "side-stuff"
+		:halign "end"
+		:space-evenly false
+		:spacing "0"
+		(box
+			:space-evenly false
+			:spacing "12"
+			
+			(audio)
+			)
+		))
+
+(defwidget buttons []
+	(box
+		:halign "end"
+		:hexpand false
+		:space-evenly true
+		:spacing "5"
+		(box (button  "󰍃"))
+		(box (button  ""))
+		(box (button  ""))))
+
+(defwidget time-date []
+	(box
+		:halign "center"
+		:space-evenly false
+		:spacing "7"
+		(label :text "${today}")
+		(label :text "${time}")))
+
+(defwidget logo []
+     (eventbox 
+   :onclick "bash ./rofi.sh"
+	(box 
+	   (button 
+	    :class "logo"
+		:halign "start"
+		:vexpand true
+		:space-evenly false
+		:spacing "0"
+		:css "* {margin-left: 5px; margin-right: 20px;}"
+		(label :text "󰍜")))))
+
+(defwidget audio []
+   (eventbox 
+   :onclick ""
+   :onscroll "sh -c 'if [ \"{}\" == \"up\" ]; then pactl set-sink-volume @DEFAULT_SINK@ +5%; else pactl set-sink-volume @DEFAULT_SINK@ -5%; fi'" 
+        
+	(box
+	  (button 
+	    :class "logo"
+		:halign "start"
+		:vexpand true
+		:space-evenly true
+		:spacing "0"
+		(label :text "󰓃")))))
+
+(defwidget wifi []
+    (eventbox 
+   :onclick "alacritty -e nmtui &"
+	(box 
+	   (button
+	    :class "logo"
+		:halign "start"
+		:vexpand true
+		:space-evenly true
+		:spacing "0"
+		(label :text "")))))
+
+
+; ..:: UTILITIES ::..
+
+(defwidget sep [] (box :hexpand false (label :class "sep" :text "|")))
+(defpoll today :interval "1h" :initial "N/A" "date +'%a %d %b'")
+(defpoll time :interval "5s" :initial "N/A" "date +'%I:%M %p'")
+
+
+

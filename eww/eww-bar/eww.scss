@@ -1,0 +1,57 @@
+* {
+	all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+
+.bar-main {
+	color: #b0b4bc;
+	background-color: rgba(17, 17, 17, 0.70);
+	margin: 0px;
+	font-size: 16px;
+	font-family: Ubunto Regular;
+	padding: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+
+.sep {
+	color: rgba(200, 200, 200, 0.5);
+}
+
+.time {
+	font-weight: bold;
+	padding-right: 20px;
+}
+
+.alert {
+	color: #aa5555;
+	padding: 0px;
+}
+
+.regular {
+	color: #b0b4bc;
+	padding: 0px;
+}
+
+.launcher {
+	background-color: rgba(150, 150, 150, 0.0);
+
+}
+button {
+  background: transparent;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+button:hover {
+  background: #444;   /* highlight effect */
+  color: #00ffcc;     /* change text color on hover */
+ 
+}
+
