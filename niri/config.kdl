@@ -23,7 +23,7 @@ input {
         }
 
         // Enable numlock on startup, omitting this setting disables it.
-        numlock
+        // numlock
     }
 
     // Next sections include libinput settings.
@@ -64,7 +64,7 @@ input {
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.
      //   warp-mouse-to-focus
-       focus-follows-mouse
+     //  focus-follows-mouse
 
 
      //Focus windows and outputs automatically when moving the mouse into them.
@@ -78,7 +78,7 @@ input {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-/-output "eDP-1" {
+/-output "DP-1" {
     // Uncomment this line to disable this output.
     // off
 
@@ -143,7 +143,7 @@ layout {
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 0.5; }
+    // default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -278,10 +278,11 @@ background-color "#00000000"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
-spawn-sh-at-startup "/usr/lib/xdg-desktop-portal-gtk"
-spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+//spawn-sh-at-startup "/usr/lib/xdg-desktop-portal-gtk"
+//spawn-sh-at-startup "/usr/lib/xdg-desktop-portal-wlr"
+//spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-sh-at-startup "wbg -s /home/lynch/1.png"
-spawn-sh-at-startup "waybar"
+spawn-sh-at-startup "fish ~/launch.sh"
 // spawn-sh-at-startup "xwayland-satellite"
 
 //environment {
@@ -296,7 +297,7 @@ spawn-sh-at-startup "waybar"
 }
 
 overview {
-    zoom 0.6
+    zoom 0.71
     backdrop-color "#000000"
 
     workspace-shadow {
@@ -310,7 +311,7 @@ overview {
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+     skip-at-startup
 }
 layer-rule {
     // Change "namespace=^wallpaper$" if you are using a different tool's namespace.
@@ -323,10 +324,10 @@ layer-rule {
   place-within-backdrop true
 }
 
-layer-rule {
-  match namespace="alacritty"
-  place-within-backdrop true 
-}
+//layer-rule {
+//  match namespace="alacritty"
+//  place-within-backdrop true 
+//}
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
@@ -393,8 +394,8 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 5 
-    clip-to-geometry true
+    geometry-corner-radius 0
+    clip-to-geometry false
     draw-border-with-background false
 }
 
@@ -452,10 +453,10 @@ binds {
 
     Mod+Shift+Q repeat=false { close-window; }
 
-    //Mod+Left  { focus-column-left; }
-    //Mod+Down  { focus-window-down; }
-    //Mod+Up    { focus-window-up; }
-    //Mod+Right { focus-column-right; }
+    //Mod+S  { focus-column-left; }
+    //Mod+Z  { focus-window-down; }
+    //Mod+X    { focus-window-up; }
+    //Mod+S { focus-column-right; }
     Mod+H     { focus-column-left; }
     Mod+J     { focus-window-down; }
     Mod+K     { focus-window-up; }
@@ -532,22 +533,22 @@ binds {
     // To avoid scrolling through workspaces really fast, you can use
     // the cooldown-ms property. The bind will be rate-limited to this value.
     // You can set a cooldown on any bind, but it's most useful for the wheel.
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+    // Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    // Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    // Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    // Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
 
-    Mod+WheelScrollRight      { focus-column-right; }
-    Mod+WheelScrollLeft       { focus-column-left; }
-    Mod+Ctrl+WheelScrollRight { move-column-right; }
-    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+    Mod+WheelScrollUp      { focus-column-right; }
+    Mod+WheelScrollDown       { focus-column-left; }
+    Mod+Shift+WheelScrollUp { move-column-right; }
+    Mod+Shift+WheelScrollDown  { move-column-left; }
 
     // Usually scrolling up and down with Shift in applications results in
     // horizontal scrolling; these binds replicate that.
-    Mod+Shift+WheelScrollDown      { focus-column-right; }
-    Mod+Shift+WheelScrollUp        { focus-column-left; }
-    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
-    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+    // Mod+Shift+WheelScrollDown      { focus-column-right; }
+    // Mod+Shift+WheelScrollUp        { focus-column-left; }
+    // Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    // Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
 
     // Similarly, you can bind touchpad scroll "ticks".
     // Touchpad scrolling is continuous, so for these binds it is split into

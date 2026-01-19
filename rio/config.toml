@@ -221,8 +221,8 @@
 # ]
 #
 # Simple example:
-# [fonts]
-# size = 18
+ [fonts]
+ size = 18
 #
 # [fonts.regular]
 # family = "cascadiamono"

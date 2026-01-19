@@ -34,12 +34,14 @@ alias dwll='slstatus -s | dwl'
 alias qute='nohup firejail qutebrowser &'
 alias screenshot='bash ~/screenshot.sh'
 alias wpp='nohup python ~/wallpaper.py &'
-alias app='bash ~/fzflauncher.sh'
+alias a='bash ~/fzflauncher.sh'
 alias zenbrowser='nohup flatpak run app.zen_browser.zen >/dev/null 2>&1 & disown'
 alias steam='nohup flatpak run com.valvesoftware.Steam >/dev/null 2>&1 & disown'
 alias x='xwayland-satellite & disown'
+alias p='niri & disown'
 #fastfetch
-macchina -t Beryllium
+#macchina -t Beryllium
+pfetch
 
 set -g fish_greeting ""
 
