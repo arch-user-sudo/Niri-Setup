@@ -5,11 +5,11 @@
     }
 
 window#waybar {
-    background-color: rgba(17, 17, 17, 0.80);
+    background-color: rgba(17, 17, 17, 0.70);
     border: none;
     color: #ffffff;
     padding: 0 0px;
-    border-radius: 4px;
+    border-radius: 10px;
     transition-property: background-color;
     transition-duration: .5s
     }
@@ -40,17 +40,27 @@ window#waybar.chromium {
 
 #workspaces button:hover {
     transition: none;
-    border: none;
+    padding: 0 6px;
+  border-bottom: 2px solid white;
     background: transparent;
     border-radius: 4px
     }
 #workspaces button.active {
-    background-color: #ffffff;
-    border: 2px solid white;
-    color: black;
-    border-radius: 8px;
-     padding: 0 4px;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    color: #ffffff;
+    border-radius: 0px;
+     padding: 0 6px;
     }
+
+#workspaces button.active:hover {
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    color: #ffffff;
+    border-radius: 4px;
+     padding: 0 6px;
+    }
+
 #workspaces button.urgent {
     color: #eb4d4b
     }
@@ -92,20 +102,21 @@ window#waybar.chromium {
     }
 
 #clock {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: transparent;
+    color: #ffffff;
     padding: 0 10px;
-    border-radius: 5px;
+    border-radius: 0px;
     }
 #clock:hover {
     background-color: rgba(256, 256, 256, 0.10);
     color: rgba(256, 256, 256, 1);
-    border-radius: 4px
+    border-radius: 0px;
+    border-bottom: 2px solid white
     }
 
 #network {
     background-color: transparent;
-    border-bottom: 2px solid white;
+    border-bottom: 0px solid white;
     color: #ffffff;
     padding: 0 10px;
     border-radius: 0px;
@@ -113,7 +124,8 @@ window#waybar.chromium {
 #network:hover {
     color: #ffffff;
     background-color: rgba(256, 256, 256, 0.10);
-    border-radius: 4px
+    border-radius: 0px;
+    border-bottom: 2px solid white
     }
 #network.disconnected {
     background-color: transparent
@@ -122,9 +134,18 @@ window#waybar.chromium {
 #tray {
     background-color: transparent;
     color: #ffffff;
+    border-bottom: 2px solid white;
     padding: 0 10px;
-    border-radius: 5px;
+    border-radius: 0px;
     }
+#tray:hover {
+    background-color: rgba(256, 256, 256, 0.10);
+    color: #ffffff;
+    padding: 0 10px;
+    border-bottom: 2px solid white;
+    border-radius: 0px;
+    }
+
 #tray > .passive {
     -gtk-icon-effect: dim;
     }
@@ -170,26 +191,28 @@ window#waybar.chromium {
     background-color: transparent;
     color: #ffffff;
     padding: 0 10px;
-    border-bottom: 2px solid white;
+    border-bottom: 0px solid white;
     border-radius: 0px;
     }
 #custom-bluetooth:hover {
     background-color: rgba(256, 256, 256, 0.10);
-    border-radius: 4px;
+     border-bottom: 2px solid white;
+    border-radius: 0px;
     color: #ffffff;
 
     }
 #pulseaudio {
     background-color: transparent;
-    border-bottom: 2px solid white;
+    border-bottom: 0px solid white;
     color: #ffffff;
     padding: 0 10px;
     border-radius: 0px;
     }
 #pulseaudio:hover {
     background-color: rgba(256, 256, 256, 0.10);
-    border-radius: 4px;
+    border-radius: 0px;
     color: #ffffff;
+    border-bottom: 2px solid white;
     }
 #pulseaudio.muted {
     background-color: rgba(256, 256, 256, 0.10);

@@ -1,17 +1,10 @@
-# Auto-start niri on first TTY login
-#if status is-login
-#    if test -z "$WAYLAND_DISPLAY" -a (tty) = /dev/tty1
-#        exec niri & disown
-#    end
-#end
-
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
 zoxide init fish | source
 
-#starship init fish | source
+starship init fish | source
 
 alias yayf='fzf --height=30%'
 alias weather='curl wttr.in/Kimberley'
@@ -36,12 +29,13 @@ alias screenshot='bash ~/screenshot.sh'
 alias wpp='nohup python ~/wallpaper.py &'
 alias a='bash ~/fzflauncher.sh'
 alias zenbrowser='nohup flatpak run app.zen_browser.zen >/dev/null 2>&1 & disown'
-alias steam='nohup flatpak run com.valvesoftware.Steam >/dev/null 2>&1 & disown'
+alias stm='nohup flatpak run com.valvesoftware.Steam >/dev/null 2>&1 & disown'
 alias x='xwayland-satellite & disown'
-alias p='niri & disown'
+alias p='niri'
+alias s='fish ~/togglescripts/waybar.sh'
 #fastfetch
-#macchina -t Beryllium
-pfetch
+macchina -t Beryllium
+#pfetch
 
 set -g fish_greeting ""
 
@@ -83,8 +77,8 @@ function img
     set -l files (find . -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" -o -iname "*.gif" \) -print)
 
     # Open fzf with live wallpaper selection
-    printf "%s\n" $files | fzf --prompt="View > " \
+    printf "%s\n" $files | sk --prompt="View > " \
         --bind "enter:execute-silent(nohup imv-dir "{}" &)"
 end
 
-fish_config theme choose seaweed
+fish_config theme choose tomorrow-night

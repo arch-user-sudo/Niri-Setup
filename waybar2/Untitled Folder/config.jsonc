@@ -1,0 +1,190 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 26, // Waybar height (to be removed for auto height)
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "width": 1920, // Waybar width
+    "spacing": 5, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/arch",
+        "custom/ca-va",
+       
+        "",
+        
+    ],
+    "modules-center": [
+    "clock",
+    ""
+
+  
+    ],
+    "modules-right": [
+       "tray",
+       
+         // "custom/bluetooth",
+        "network",
+        "pulseaudio",
+        "custom/poweroff",
+       
+    ],
+    // Modules configuration
+     "hyprland/workspaces":{
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": true,
+         "format": "{icon}",
+         "format-icons": {
+             "urgent": "",
+             "active": "",
+             "default": "●"
+             },
+         "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
+      },
+     },
+
+    "tray": {
+        "icon-size": 15,
+        "spacing": 15,
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+
+    "clock": {
+        // "timezone": "America/New_York",
+        "format": "{:%a %b %d %I:%M %p}",
+        "on-click": "bash ~/.config/waybar/scripts/underbar.sh",
+        "tooltip": false
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "",
+        "interval": 5,
+        "tooltip": false,
+        "format-ethernet": "󰈀",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "⚠",
+        "on-click": "kitty -e nmtui"
+    },
+
+    "mpris": {
+        "format": "{artist} - {title}",
+        "format-paused": "{status_icon} {artist} - {title}",
+        "format-stopped": "No media",
+        "interval": 5,
+        "tooltip": false,
+        "tooltip-format": "{player}: {album} - {title}",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous",
+        "on-scroll-up": "playerctl volume 0.05+",
+        "on-scroll-down": "playerctl volume 0.05-",
+        "player-icons": {
+    "default": "",
+
+    // Desktop apps
+    "spotify": "",
+    "vlc": "",
+    "mpv": "",
+    "chromium": "",
+    "firefox": "",
+    "brave": "",
+
+    // Streaming platforms (when detected via browser/site check)
+    "youtube": "",
+    "twitch": "",
+    "soundcloud": "",
+    "bandcamp": "",
+    "deezer": "",       // FA "Deezer" exists in Nerd Fonts
+    "applemusic": "",   // fallback: Apple logo
+    "tidal": "",        // "Water wave" style icon
+    "netflix": "ﱄ",      // Nerd Font Netflix logo
+    "primevideo": "",   // Amazon icon
+    "hulu": "",         // fallback FA "Hulu" (in Nerd Fonts)
+    "disneyplus": "󰐼",   // Nerd Font Disney+
+    "peertube": "",     // fallback: YouTube icon
+    "mixcloud": "",
+
+    // Socials with audio/video
+    "facebook": "",
+    "instagram": "",
+    "tiktok": "",       // Nerd Font TikTok logo
+    "twitter": "",
+    "reddit": ""
+  }
+    },
+
+    "custom/cava": {
+        "exec": "~/.config/waybar/scripts/cava.sh",
+        "format": "{}",
+        
+    },
+    
+        "custom/arch":  {
+        "format": "", 
+        "tooltip": false,
+        "on-click": "bash ~/.config/waybar/scripts/openclose.sh"
+    },
+    
+        "custom/exit":  {
+        "format": "󰗼",
+        //"on-click": "kitty -e sudo pkill dwl",
+        },
+        
+        "custom/poweroff": {
+        "format": "",
+        "tooltip": false,
+        //"on-click": "kitty -e sudo poweroff",
+        },
+        
+        "custom/restart":  {
+        "format": "",
+        //"on-click": "kitty -e sudo reboot",
+         },
+         
+    "custom/bluetooth": {
+        "exec": "~/.config/waybar/scripts/bluetooth_battery.sh",
+        "interval": 5,
+        "tooltip": false,
+        "on-click": "kitty -e bluetuith"
+   }, 
+    "pulseaudio": {
+        // "scroll-step": 10, // %, can be a float
+        "format": "",
+        "format-bluetooth": "{volume}%  {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "Muted ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [" "," ", " ", " "]
+        },
+        "tooltip": false,
+    
+        "on-click": "kitty -e pulsemixer"
+    },
+
+}
+
+

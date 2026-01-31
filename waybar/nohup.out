@@ -1,0 +1,31 @@
+[2026-01-27 00:15:02.258] [info] Using configuration file /home/lynch/.config/waybar/config.jsonc
+[2026-01-27 00:15:02.260] [info] Discovered appearance 'dark'
+[2026-01-27 00:15:02.301] [info] Using CSS file /home/lynch/.config/waybar/style.css
+[2026-01-27 00:15:02.306] [info] Niri IPC starting
+[2026-01-27 00:15:02.353] [info] Bar configured (width: 383, height: 28) for output: DP-1
+[2026-01-27 00:15:02.370] [info] Bar configured (width: 381, height: 28) for output: DP-1
+[2026-01-27 00:15:02.404] [info] Bar configured (width: 383, height: 28) for output: DP-1
+[2026-01-27 05:34:55.428] [info] Bar configured (width: 415, height: 28) for output: DP-1
+[2026-01-27 09:28:19.486] [info] Bar configured (width: 413, height: 28) for output: DP-1
+[2026-01-27 09:28:19.552] [info] Bar configured (width: 415, height: 28) for output: DP-1
+[2026-01-27 09:28:21.096] [info] Bar configured (width: 413, height: 28) for output: DP-1
+[2026-01-27 09:28:21.153] [info] Bar configured (width: 415, height: 28) for output: DP-1
+[2026-01-27 09:47:52.546] [info] Bar configured (width: 413, height: 28) for output: DP-1
+[2026-01-27 09:47:52.596] [info] Bar configured (width: 415, height: 28) for output: DP-1
+[2026-01-27 09:47:52.978] [info] Bar configured (width: 413, height: 28) for output: DP-1
+[2026-01-27 09:47:53.044] [info] Bar configured (width: 415, height: 28) for output: DP-1
+
+** (waybar:271743): WARNING **: 09:48:04.852: Status Notifier Item with bus name ':1.326' and object path '/org/ayatana/NotificationItem/c772B4RjL8' is already registered
+[2026-01-27 09:48:04.852] [info] Bar configured (width: 440, height: 28) for output: DP-1
+[2026-01-27 09:48:04.853] [error] Item '': No icon name or pixmap given.
+[2026-01-27 09:48:04.892] [error] Item 'c772B4RjL8': Could not find an icon named 'org.localsend.localsend_app-tray' and no pixmap given.
+[2026-01-27 09:48:04.893] [info] Bar configured (width: 456, height: 28) for output: DP-1
+[2026-01-27 09:48:04.893] [error] Item 'c772B4RjL8': Could not find an icon named 'org.localsend.localsend_app-tray' and no pixmap given.
+[2026-01-27 09:51:27.578] [info] Bar configured (width: 415, height: 28) for output: DP-1
+[2026-01-27 09:52:08.682] [info] Bar configured (width: 440, height: 28) for output: DP-1
+[2026-01-27 09:52:08.682] [error] Item '': No icon name or pixmap given.
+
+** (waybar:271743): WARNING **: 09:52:08.683: Status Notifier Item with bus name ':1.334' and object path '/org/ayatana/NotificationItem/mLXlFt9iFY' is already registered
+[2026-01-27 09:52:08.684] [error] Item 'mLXlFt9iFY': Could not find an icon named 'org.localsend.localsend_app-tray' and no pixmap given.
+[2026-01-27 09:52:08.697] [info] Bar configured (width: 456, height: 28) for output: DP-1
+[2026-01-27 09:52:08.697] [error] Item 'mLXlFt9iFY': Could not find an icon named 'org.localsend.localsend_app-tray' and no pixmap given.

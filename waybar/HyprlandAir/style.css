@@ -1,11 +1,11 @@
-*   {
+* {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Ubuntu";
     font-size: 15px
-    }
+}
 
 window#waybar {
-    background-color: rgba(17, 17, 17, 0.80);
+    background-color: rgba(17, 17, 17, 0.7);
     border: none;
     color: #ffffff;
     padding: 0 0px;
@@ -14,7 +14,7 @@ window#waybar {
     transition-duration: .5s
     }
 window#waybar.hidden {
-    opacity: 0
+    opacity: 0 
     }
 window#waybar.empty {
     background-color: transparent
@@ -31,7 +31,7 @@ window#waybar.chromium {
     }
 
 #workspaces button {
-    padding: 0 6px;
+    padding: 0 4px;
     border-radius: 0;
     color: #ffffff;
     margin: 0 0px;
@@ -92,10 +92,10 @@ window#waybar.chromium {
     }
 
 #clock {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 0 10px;
-    border-radius: 5px;
+background-color: #ffffff; 
+color: #000000;
+padding: 0 10px; 
+border-radius: 5px;
     }
 #clock:hover {
     background-color: rgba(256, 256, 256, 0.10);
@@ -104,11 +104,11 @@ window#waybar.chromium {
     }
 
 #network {
-    background-color: transparent;
-    border-bottom: 2px solid white;
-    color: #ffffff;
-    padding: 0 10px;
-    border-radius: 0px;
+background-color: transparent; 
+border-bottom: 2px solid white;
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 0px;
 }
 #network:hover {
     color: #ffffff;
@@ -117,13 +117,13 @@ window#waybar.chromium {
     }
 #network.disconnected {
     background-color: transparent
-    }
+    } 
 
 #tray {
-    background-color: transparent;
-    color: #ffffff;
-    padding: 0 10px;
-    border-radius: 5px;
+background-color: transparent; 
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 5px;
     }
 #tray > .passive {
     -gtk-icon-effect: dim;
@@ -144,52 +144,49 @@ window#waybar.chromium {
     }
 
 #mpris {
-    background-color: transparent;
-    color: #ffffff;
-    padding: 0 10px;
-    border-radius: 5px;
-    border-bottom: 2px solid white;
-    font-family: "Ubunto Regular, Noto Font Emoji"
-    }
+background-color: transparent; 
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 5px;
+border-bottom: 2px solid white;
+font-family: "Ubunto Regular, Noto Font Emoji"
+}
 
-#custom-cava {
-    background-color: transparent;
-    color: #ffffff;
-    padding: 0 10px;
-    border-radius: 5px;
-    }
+#custom-cava { 
+background-color: transparent; 
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 5px;
 
-#custom-arch {
-    background-color: transparent;
-    color: #0283fc;
-    padding: 0 10px;
-    border-radius: 5px;
+ }
+ 
+ #custom-arch {
+background-color: transparent; 
+color: #0283fc;
+padding: 0 10px; 
+border-radius: 5px;
     }
+    
+    #custom-bluetooth {
+background-color: transparent; 
+color: #ffffff;
+padding: 0 10px; 
+border-bottom: 2px solid white;
+border-radius: 0px;
+    }
+    
+    #pulseaudio {
+ background-color: transparent;; 
+ border-bottom: 2px solid white;
+color: #ffffff;
+padding: 0 10px; 
+border-radius: 0px;
 
-#custom-bluetooth {
-    background-color: transparent;
-    color: #ffffff;
-    padding: 0 10px;
-    border-bottom: 2px solid white;
-    border-radius: 0px;
-    }
-#custom-bluetooth:hover {
-    background-color: rgba(256, 256, 256, 0.10);
-    border-radius: 4px;
-    color: #ffffff;
-
-    }
-#pulseaudio {
-    background-color: transparent;
-    border-bottom: 2px solid white;
-    color: #ffffff;
-    padding: 0 10px;
-    border-radius: 0px;
     }
 #pulseaudio:hover {
-    background-color: rgba(256, 256, 256, 0.10);
+    background-color: rgba(256, 256, 256, 0.7);
     border-radius: 4px;
-    color: #ffffff;
+    color: #000000; 
     }
 #pulseaudio.muted {
     background-color: rgba(256, 256, 256, 0.10);

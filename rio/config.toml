@@ -93,7 +93,7 @@
 #
  [cursor]
  shape = 'block'
- blinking = false
+ blinking = true
  blinking-interval = 500
 # Editor
 #
@@ -105,7 +105,7 @@
 # [editor]
 # program = "vi"
 # args = []
-
+#
 # Window configuration
 #
 # • width - define the initial window width.
@@ -137,7 +137,7 @@
 # mode = "windowed"
  opacity = 0.7
 # blur = false
- decorations = "Transparent"
+# decorations = "Transparent"
 # colorspace = "display-p3"
 
 # Renderer
@@ -165,12 +165,14 @@
 #
 # Example:
  [renderer]
- performance = "Low"
- backend = "Vulkan"
-# disable-unfocused-render = false
-# level = 1
-# filters = [""]
-
+ performance = "High"
+ backend = "GL"
+ disable-unfocused-render = false
+ use_linear_blending = false
+ level = 1
+ filters = [""]
+ disable_filtering = true
+#
 # Keyboard
 #
 # use-kitty-keyboard-protocol - Enable Kitty Keyboard protocol
@@ -187,7 +189,7 @@
 # use-kitty-keyboard-protocol = false
 # disable-ctlseqs-alt = false
 # ime-cursor-positioning = true
-
+#
 # Fonts
 #
 # Configure fonts used by the terminal
@@ -222,8 +224,9 @@
 #
 # Simple example:
  [fonts]
- size = 18
-#
+ size = 16
+ antialias = "none"
+hinting = true
 # [fonts.regular]
 # family = "cascadiamono"
 # style = "Normal"
@@ -243,7 +246,7 @@
 # family = "cascadiamono"
 # style = "Italic"
 # weight = 800
-
+#
 # Scroll
 #
 # You can change how many lines are scrolled each time by setting this option.
@@ -259,7 +262,7 @@
 # [scroll]
 # multiplier = 3.0
 # divider = 1.0
-
+#
 # Navigation
 #
 # "mode" - Define navigation mode
@@ -281,7 +284,7 @@
 # hide-if-single = true
 # use-current-path = false
 # color-automation = []
-
+#
 # Shell
 #
 # You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
@@ -315,7 +318,7 @@
 # [shell]
 # program = "/opt/homebrew/bin/tmux"
 # args = ["new-session", "-c", "/var/www"]
-
+#
 # Colors
 #
 # Colors definition will overwrite any property in theme
@@ -323,11 +326,12 @@
 #
 # Example:
  [colors]
- background = '#111111'
-# foreground = '#F9F4DA'
- cursor = '#999999'
-# tabs = '#443d40'
- tabs-active = '#111111'
+ background = '#111011'
+ foreground = '#ffffff'
+ cursor = '#ffffff'
+ tabs = '#111111'
+# tabs-active = '#111111'
+#
 # green = '#0BA95B'
 # red = '#ED203D'
 # blue = '#12B5E5'

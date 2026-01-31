@@ -4,8 +4,8 @@
     "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 28, // Waybar height (to be removed for auto height)
     "margin-top": 0,
-    "margin-bottom": 5,
-    "width": 50, // Waybar width
+    "margin-bottom": 0,
+    "width": 1920, // Waybar width
     "spacing": 5, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
@@ -123,7 +123,7 @@
    }, 
     "pulseaudio": {
         // "scroll-step": 10, // %, can be a float
-        "format": "     {volume}%",
+        "format": "   {volume}%",
         "format-bluetooth": "{volume}%  {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": "Muted ",
@@ -138,7 +138,6 @@
             "car": "",
             "default": [" "," ", " ", " "]
         },
-        "tooltip": false,
         "on-click": "bash /home/lynch/menu2.sh"
     },
 
