@@ -20,16 +20,6 @@ cargo build --release --no-default-features && \
 strip target/release/niri
 
 
-######################################################################################
-RUSTFLAGS="-C target-cpu=native -C opt-level=3" \
-                                       CARGO_PROFILE_RELEASE_LTO=fat \
-                                       CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
-                                       CARGO_PROFILE_RELEASE_PANIC=abort \
-                                       CARGO_PROFILE_RELEASE_DEBUG=false \
-                                       cargo build --release --features flatpak && \
-                                       strip target/release/fish
-
-#######################################################################################
 
 
 Alacritty Build Flags: 
@@ -58,3 +48,15 @@ RUSTFLAGS="-C target-cpu=native -C opt-level=3" \
 
 
 Used popsicle-bin to write iso and img files to USB. (RUfus-like tool) 
+
+
+
+
+
+33LASTEST FOR OPTIMIZED HASWELL target-cpu
+
+RUSTFLAGS="-C target-cpu=haswell -C opt-level=2 -C linker=clang -C link-arg=-fuse-ld=lld" \
+                                  CARGO_PROFILE_RELEASE_LTO=thin \
+                                  CARGO_PROFILE_RELEASE_CODEGEN_UNITS=4 \
+                                  CARGO_PROFILE_RELEASE_PANIC=abort \
+                                  cargo build --release
