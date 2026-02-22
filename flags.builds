@@ -60,3 +60,121 @@ RUSTFLAGS="-C target-cpu=haswell -C opt-level=2 -C linker=clang -C link-arg=-fus
                                   CARGO_PROFILE_RELEASE_CODEGEN_UNITS=4 \
                                   CARGO_PROFILE_RELEASE_PANIC=abort \
                                   cargo build --release
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mesa Custom Build Guide (Haswell + Niri/Wayland)
+1. Preparation & Dependencies
+
+Ensure the necessary build tools and Python modules are installed:
+Bash
+
+# Core Build Tools
+sudo pacman -S meson ninja gcc cmake pkgconf
+
+# Mesa Dependencies (Arch specific)
+sudo pacman -S wayland-protocols libglvnd libdrm libudev-static libclc spirv-llvm-translator expat
+
+# Python Modules for Code Generation
+sudo pacman -S python-mako python-yaml python-ply
+
+2. Environment Variables
+
+Set these to target the Haswell architecture specifically.
+Bash
+
+export CFLAGS="-O2 -march=haswell -pipe -ftree-vectorize"
+export CXXFLAGS="-O2 -march=haswell -pipe -ftree-vectorize"
+
+3. The Build Configuration (The "Golden" Flags)
+
+This configuration targets Haswell hardware, enables Wayland, and ensures XWayland compatibility.
+Bash
+
+# Clean previous attempts
+rm -rf build/
+
+# Configure the build
+meson setup build/ \
+  --prefix=/usr \
+  --libdir=lib \
+  --buildtype=release \
+  -Doptimization=2 \
+  -Db_lto=false \
+  -Dplatforms=wayland,x11 \
+  -Dglx=dri \
+  -Dgallium-drivers=crocus,zink,llvmpipe \
+  -Dvulkan-drivers=intel_hasvk \
+  -Dopengl=true \
+  -Dgles1=disabled \
+  -Dgles2=enabled \
+  -Degl=enabled \
+  -Dgbm=enabled \
+  -Dllvm=enabled \
+  -Dshared-llvm=enabled \
+  -Dvideo-codecs=all
+
+4. Build and Install
+Bash
+
+# Compile (using all CPU threads)
+ninja -C build
+
+# Install and Strip (removes debug symbols for a lean binary)
+sudo meson install -C build --strip
+
+# Refresh dynamic linker cache
+sudo ldconfig
+
+5. Maintenance (Post-Install)
+
+To prevent Arch Linux from overwriting your custom build during a system update:
+
+    Open /etc/pacman.conf
+
+    Add the following to the IgnorePkg line: IgnorePkg = mesa lib32-mesa vulkan-intel
+
+6. Verification
+
+Run these commands to confirm your custom build is active:
+
+    OpenGL: glxinfo | grep "Mesa 26.1.0-devel"
+
+    Vulkan: vulkaninfo --summary | grep hasvk
+
+
+
+
+RUSTFLAGS="-C target-cpu=haswell -C opt-level=z -C linker=clang -C link-arg=-fuse-ld=lld" \
+                                  CARGO_PROFILE_RELEASE_LTO=fat \
+                                  CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
+                                  CARGO_PROFILE_RELEASE_PANIC=abort \
+                                  cargo build --release
+
+
+
+
+
+
+RUSTFLAGS="-C target-cpu=haswell -C lto=thin -C codegen-units=1" cargo build --release
+
+export KCFLAGS="-march=haswell"
+
+RUSTFLAGS="-C target-cpu=haswell -C lto=thin -C codegen-units=1" cargo build --release --features systemd
+
+
+sudo setcap 'cap_sys_nice=eip' $(which niri)
+
+sudo nice -n -5 niri --session
+
+sudo renice -n -5 -p $(pidof niri)

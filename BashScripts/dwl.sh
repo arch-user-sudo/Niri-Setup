@@ -1,0 +1,1 @@
+slstatus -s | dwl

@@ -135,7 +135,7 @@
 # width = 600
 # height = 400
 # mode = "windowed"
- opacity = 0.7
+ opacity = 1
 # blur = false
 # decorations = "Transparent"
 # colorspace = "display-p3"
@@ -224,7 +224,7 @@
 #
 # Simple example:
  [fonts]
- size = 16
+ size = 14
  antialias = "none"
 hinting = true
 # [fonts.regular]
@@ -326,7 +326,7 @@ hinting = true
 #
 # Example:
  [colors]
- background = '#111011'
+ background = '#0F1011'
  foreground = '#ffffff'
  cursor = '#ffffff'
  tabs = '#111111'

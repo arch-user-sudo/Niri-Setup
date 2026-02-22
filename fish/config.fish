@@ -17,28 +17,39 @@ alias polkit='nohup /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 >/
 alias clock='tty-clock -c -D -C 7'
 alias unlock='sudo sysctl kernel.unprivileged_userns_clone=1'
 alias lock='sudo sysctl kernel.unprivileged_userns_clone=0'
-alias ls='exa --icons'
+alias ls='eza --icons'
 alias fetch='fastfetch'
 alias fetch2='fastfetch --logo arch'
 alias matrix='cmatrix -u 8 -C white'
 alias scan='clamscan -r -i'
 alias optimize='sudo fstrim -v /'
-alias dwll='slstatus -s | dwl'
-alias qute='nohup firejail qutebrowser &'
-alias screenshot='bash ~/screenshot.sh'
-alias wpp='nohup python ~/wallpaper.py &'
-alias a='bash ~/fzflauncher.sh'
+alias screenshot='bash ~/BashScripts/screenshot.sh'
+alias wpp='nohup python ~/BashScripts/wallpaper.py &'
+alias a='~/BashScripts/fzflauncher.sh'
 alias zenbrowser='nohup flatpak run app.zen_browser.zen >/dev/null 2>&1 & disown'
 alias stm='nohup flatpak run com.valvesoftware.Steam >/dev/null 2>&1 & disown'
 alias x='xwayland-satellite & disown'
-alias p='niri'
-alias s='fish ~/togglescripts/waybar.sh'
+alias p='niri --session'
+alias boost1='sudo renice -n -5 -p $(pidof niri)'
+alias boost1off='sudo renice -n -0 -p $(pidof niri)'
+alias boost2='pidof xwayland-satellite | xargs sudo renice -n -5 -p'
+alias boost2off='pidof xwayland-satellite | xargs sudo renice -n -0 -p'
+alias boost3='pidof CombatMaster.x8 | xargs sudo renice -n -5 -p'
+alias S='nohup bash ~/BashScripts/wbsystemstats.sh & disown'
+#alias s='fish ~/togglescripts/waybar.sh'
 #fastfetch
-macchina -t Beryllium
+macchina -t Hydrogen
 #pfetch
 
 set -g fish_greeting ""
 
+function s
+    if pgrep -x waybar >/dev/null
+        pkill waybar
+    else
+        nohup waybar & disown
+    end
+end
 function cd
     if builtin cd $argv
         ls -a
@@ -60,7 +71,7 @@ function pdf
 
     # Open fzf with live PDF selection
     printf "%s\n" $files | fzf --prompt="PDF > " \
-        --bind "enter:execute-silent(nohup zathura "{}" &)"
+        --bind "enter:execute-silent(nohup zathura "{}" & disown)"
 end
 
 function wp
@@ -82,3 +93,10 @@ function img
 end
 
 fish_config theme choose tomorrow-night
+
+# Auto-start niri on TTY1 without checking WAYLAND/X
+#if status is-login
+#    if test (tty) = /dev/tty1
+#        exec niri --session
+#    end
+#end
