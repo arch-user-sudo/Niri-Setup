@@ -178,3 +178,8 @@ sudo setcap 'cap_sys_nice=eip' $(which niri)
 sudo nice -n -5 niri --session
 
 sudo renice -n -5 -p $(pidof niri)
+
+
+kernel build:
+
+make march=native LD=ld.bfd -j4
