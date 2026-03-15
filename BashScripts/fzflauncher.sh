@@ -28,7 +28,7 @@ apps=$(
   done
 )
 
-choice=$(printf '%s\n' "$apps" | sort -u | fzf --prompt="apps> ")
+choice=$(printf '%s\n' "$apps" | sort -u | sk --prompt="apps> ")
 [ -z "$choice" ] && exit 0
 
 id=$(printf '%s' "$choice" | sed 's/.* | //')

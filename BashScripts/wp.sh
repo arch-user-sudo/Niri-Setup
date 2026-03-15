@@ -9,4 +9,5 @@ if pgrep -f "python.*$SCRIPT" >/dev/null; then
 else
   # Start it if not running
   python "$SCRIPT" &
+  disown
 fi

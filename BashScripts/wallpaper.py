@@ -79,7 +79,7 @@ class WallpaperPicker(Gtk.Window):
 
     def load_wallpapers_async(self):
         """Scans ~/Wallpapers and loads thumbnails efficiently"""
-        wallpaper_dir = os.path.expanduser("~/Wallpapers")
+        wallpaper_dir = os.path.expanduser("/home/lynch/Wallpapers")
         valid_exts = (".png", ".jpg", ".jpeg", ".webp")
         
         try:
