@@ -1,0 +1,146 @@
+// -*- mode: jsonc -*-
+{
+   "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 24, // Waybar height (to be removed for auto height)
+    "margin-top": 5,
+    "margin-bottom": 5,
+    "width": 50, // Waybar width
+    "spacing": 5, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+         
+        "tray",
+    ],
+    "modules-center": [
+       
+  
+    ],
+    "modules-right": [
+      
+        "pulseaudio",
+        
+        "network",
+    //"custom/weather",
+        "clock"
+    ],
+    // Modules configuration
+"niri/workspaces": {
+    // general behavior
+    "disable-scroll": true,
+    "active-only": false,       // show all, not just active
+
+
+    // what to display and how
+    "format": "{icon}",
+
+    "format-icons": {
+        // icons for named/numbered workspaces
+        "1": " ",
+        "2": " ",
+        "3": " ",
+        "4": "4 ",
+        "5": " ",
+        "6": "6 ",
+        "7": "7 ",
+        "8": " ",
+        "9": "9 "
+       
+    },
+
+    // persist these workspaces even if empty.
+    "persistent-workspace": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": []
+    }
+},
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 20,
+        "icons": { }
+    },
+
+    "clock": {
+        "format": "{:%a %d %b %I:%M %p}",
+        "on-click": "bash /home/lynch/BashScripts/clock.sh",
+        "tooltip": false
+    },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " ",
+        "interval": 10,
+        "tooltip": false,
+        "format-ethernet": "󰈀 ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": " ⚠ ",
+        "on-click": "bash /home/lynch/BashScripts/menu2.sh"
+    },
+
+    "mpris": {
+        "format": "{player_icon} {artist} - {title}",
+        "format-paused": "{status_icon} {artist} - {title}",
+        "format-stopped": "No media",
+        "interval": 1,
+        "tooltip": true,
+        "tooltip-format": "{player}: {album} - {title}",
+        "ignored-players": [],
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous",
+        "on-scroll-up": "playerctl volume 0.05+",
+        "on-scroll-down": "playerctl volume 0.05-"
+    },
+"custom/weather": {
+    "format": "   {}",
+    "exec": "~/.config/waybar/scripts/Weather.sh",
+    "interval": 600,
+},
+    "custom/cava": {
+        "exec": "~/.config/waybar/scripts/cava.sh",
+        "format": "{}",
+        
+    },
+    
+        "custom/arch":  {
+        "format": "  ", 
+        "tooltip": false,
+        "on-click": "bash ~/.config/waybar/scripts/openclose.sh"
+    },
+    
+    "custom/bluetooth": {
+        "exec": "~/.config/waybar/scripts/bluetooth_battery.sh",
+        "interval": 1,
+        "tooltip": false,
+        "on-click": "bash /home/lynch/BashScripts/menu2.sh"
+   }, 
+    "pulseaudio": {
+        // "scroll-step": 10, // %, can be a float
+        "format": " ",
+        "format-bluetooth": "{volume}%  {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "Muted ",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [" "," ", " ", " "]
+        },
+        "tooltip": false,
+        "on-click": "bash /home/lynch/BashScripts/menu2.sh"
+    },
+
+}

@@ -1,0 +1,9 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dexclude\x20\x2egit
+SETUVAR --export GTK_CSD:0
+SETUVAR --export QT_WAYLAND_DISABLE_WINDOWDECORATION:1
+SETUVAR __fish_initialized:4300
+SETUVAR fish_color_cwd:yellow
+SETUVAR fish_color_user:yellow
+SETUVAR fish_user_paths:/home/lynch/\x2eopencode/bin\x1e/usr/bin

@@ -1,0 +1,53 @@
+window {
+margin: 10px;
+border: 1px solid #666666;
+background-color: rgba( 17, 17, 17, 0.9);
+
+}
+
+#input {
+margin: 10px;
+border: none;
+color: #f8f8f2;
+background-color: rgba(256, 256, 256, 0.1);
+}
+ 
+#inner-box {
+margin: 5px;
+border: none;
+background-color: transparent;
+}
+
+#outer-box {
+margin: 5px;
+border: none;
+background-color: transparent;
+}
+
+#scroll {
+margin: 0px;
+border: none;
+}
+
+#text {
+margin: 10px;
+border: none;
+color: #f8f8f2;
+} 
+
+#entry.activatable {
+color: #666666;
+background-color: transparent;
+}
+
+#entry > * {
+color: #f8f8f2;
+}
+
+#entry:selected {
+background-color: rgba(256, 256, 256, 0.2);
+}
+
+#entry:selected #text {
+font-weight: bold;
+}

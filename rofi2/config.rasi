@@ -1,0 +1,182 @@
+* {
+    background: #11111133;
+    tbackground: #888888f1;
+    foreground: #ffffff;
+    textcolor: #ffffff;
+    accent1: #cc241d;
+    accent2: #98971a;
+    accent3: #d79921;
+    accent4: #458588;
+    selection: #333333;
+    myhigh: bold #98971a;
+}
+
+configuration {
+    location: 0;          // center
+    xoffset: 0;
+    yoffset: 0;
+    padding: 0;
+     font: "Ubuntu Mono 16";
+ fixed-num-lines: true;
+ show-icons: true;
+ icon-theme: "COSMIC";
+ eh: 1;
+ dpi: 120;
+ display-drun: "Apps";
+}
+
+window {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0px;
+  border-color: var(foreground);
+  border-radius: 0;
+  transparency: "none";
+  background-color: #00000000;
+}
+
+scrollbar {
+  background-color: transparent;
+  handle-width: 6px;
+  handle-color: #333333A1;
+  handle-rounded-corners: true;
+   orientation: horizontal;
+}
+
+box {
+  orientation: horizontal;
+  spacing: 0px;
+}
+
+textbox {
+  enabled: true;
+  background-color: var(foreground);
+  border: 0px;
+  border-color: var(accent1);
+}
+
+entry {
+  placeholder: "Search...";
+  placeholder-color: var(foreground);
+  color: var(foreground);
+  border: 0;
+  border-color: var(foreground);
+  padding: 10px;
+  border-radius-left: 10;
+  background-color: transparent;
+}
+
+listview {
+   orientation: horizontal;
+  lines: 5;
+  margin: 0 0 0 0;
+  padding: 60;
+  columns: 1;
+  background-color: var(background);
+  scrollbar: true;
+  cycle: false;
+  border: 0px;
+  border-radius: 0;
+  border-color: #777777B3;
+}
+
+mainbox {
+  background-color: transparent;
+  spacing: 0; 
+  padding: 0;
+  children: [ listview, inputbar ];
+}
+
+element-icon{
+ size: 50;
+ background-color: inherit;
+ text-color: inherit;
+}
+
+inputbar {
+  padding: 10;
+  background-color: var(background);
+  //background-image: url("~/.config/rofi/img/4.png");
+  children: [ prompt , seperator , entry ];
+  border: 0px;
+  border-radius: 0;
+  border-color: #777777B3;
+}
+
+prompt{
+ enabled: false;
+}
+
+seperator{
+ enabled: false; 
+}
+
+element{
+ padding: 10 20 10 20;
+ spacing: 14px;
+ margin: 2 0 2 0;
+ border-radius: 9;
+ border: 0;
+}
+
+element normal.normal{
+ background-color: transparent;
+ text-color: var(foreground);
+}
+
+element normal.active{
+ background-color: var(background);
+ text-color: var(foreground);
+}
+
+element normal.urgent{
+ background-color: var(background);
+ text-color: var(foreground);
+}
+
+element alternate.active{
+ background-color: var(background);
+ text-color: var(foreground);
+}
+
+element alternate.normal{
+ background-color: transparent;
+ text-color: var(foreground);
+}
+
+element alternate.urgent{
+ background-color: var(background);
+ text-color: var(foreground);
+}
+
+element-text{
+ background-color: transparent;
+ text-color: inherit;
+ padding: 0;
+ vertical-align: 0.5;
+ highlight: var(myhigh);
+}
+
+element selected.normal {
+ background-color: #333333A1;
+ text-color: #ffffff;
+}
+
+element selected.urgent {
+ background-color: var(selection);
+ text-color: var(foreground);
+}
+
+element selected.active {
+ background-color: var(selection);
+ text-color: var(foreground);
+}
+
+element-icon{
+ size: 36;
+ background-color: transparent;
+ text-color: inherit;
+}
+
+

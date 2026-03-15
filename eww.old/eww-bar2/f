@@ -1,0 +1,8 @@
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),   /* fade-in left */
+    rgba(255, 255, 255, 1),   /* white center */
+    rgba(255, 255, 255, 0)    /* fade-out right */
+  ) 0;
+  border-image-slice: 1;

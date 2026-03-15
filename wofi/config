@@ -1,0 +1,26 @@
+# Center the window
+location=center
+anchor=center
+
+# Show applications only
+show=drun
+
+# Optional: adjust width/height
+width=600
+lines=4
+
+# --- Wofi Configuration ---
+# You can add these lines or ensure they are present and configured this way
+
+# Add 'j' to move down
+key_down=Down,Control_n,j
+
+# Add 'k' to move up
+key_up=Up,Control_p,k
+
+# Optional: For accepting the entry (Enter is always used, you can add 'l')
+key_accept=Return,Control_m,l
+
+# Optional: If you want 'h' and 'l' for left/right movement in grid mode
+key_left=Left,Control_b,h
+key_right=Right,Control_f,l

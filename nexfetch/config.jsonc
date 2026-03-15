@@ -1,0 +1,14 @@
+{
+    "username": true,
+    "hostname": true,
+    "os": true,
+    "kernel": true,
+    "uptime": true,
+    "packages": true,
+    "memory": true,
+    "cpu": true,
+    "age": true,
+    "separator": true,
+    "colors": true,
+    "logo_color": "blue"
+}

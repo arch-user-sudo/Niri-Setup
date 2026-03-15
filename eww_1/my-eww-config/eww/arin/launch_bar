@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+EWW=`which eww`
+CFG="$HOME/.config/eww/arin"
+FILE="$HOME/.cache/eww_launch.bar"
+
+## Open widgets 
+run_eww() {
+	${EWW} --config "$CFG" open bar
+}
+
+## Launch or close widgets accordingly
+if [[ ! -f "$FILE" ]]; then
+	touch "$FILE"
+	run_eww
+else
+	${EWW} --config "$CFG" close bar
+	rm "$FILE"
+fi

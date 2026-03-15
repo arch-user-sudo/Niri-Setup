@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# 1. Get the full ACPI info string once
+INFO=$(acpi -b)
+
+# 2. Extract the percentage number using Bash regex
+[[ $INFO =~ ([0-9]+)% ]]
+BATTERY=${BASH_REMATCH[1]}
+
+main() {
+    # LOGIC: Check if Discharging first.
+    # If it contains "Discharging", we are on battery power.
+    # If it does NOT contain "Discharging", we are Plugged In (Charging, Not charging, Full).
+
+    if [[ $INFO == *"Discharging"* ]]; then
+        # === DISCHARGING (BATTERY POWER) ===
+        if [[ $BATTERY -ge 65 ]]; then
+             echo "./images/icons/battery/battery-3.png"
+        elif [[ $BATTERY -ge 35 ]]; then
+             echo "./images/icons/battery/battery-2.png"
+        elif [[ $BATTERY -ge 10 ]]; then
+             echo "./images/icons/battery/battery-1.png"
+        else
+             echo "./images/icons/battery/low.png"
+        fi
+        
+    else
+        # === PLUGGED IN ===
+        # Covers: "Charging", "Not charging" (plugged in but full), "Unknown", "Full"
+        
+        # If it explicitly says Full, show the finished icon
+        if [[ $INFO == *"Full"* ]]; then
+            echo "./images/icons/battery/full.png"
+        else
+            # For "Charging" OR "Not charging", show the Charging icon
+            echo "./images/icons/battery/charge.png"
+        fi
+    fi
+}
+
+if [[ $1 == '--icon' ]]; then
+    main
+elif [[ $1 == '--perc' ]]; then
+    echo "${BATTERY}%"
+fi

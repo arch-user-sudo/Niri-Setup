@@ -1,0 +1,13 @@
+
+fg.black           #####
+fg.black          ##fg.white###fg.black##
+fg.black          #fg.white#fg.blackO#Ofg.white#fg.black#
+fg.black          #fg.white#####fg.black#
+fg.black        ##fg.white#######fg.black##
+fg.black       ##fg.white#########fg.black##
+fg.black      ##fg.white###########fg.black##
+fg.black      ##fg.white############fg.black##
+fg.black     ##fg.white#############fg.black##
+fg.black   ##fg.white#################fg.black##
+fg.black   ##fg.white#################fg.black##
+fg.black    ###################

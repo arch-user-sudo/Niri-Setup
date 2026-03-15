@@ -1,0 +1,11 @@
+configuration{
+ font: "Ubuntu Regular 16";
+ fixed-num-lines: true;
+ show-icons: true;
+ icon-theme: "Papirus";
+ eh: 1;
+ dpi: 75;
+ display-drun: "Apps";
+}
+
+@theme "~/.config/rofi/opaque.rasi"

@@ -1,0 +1,104 @@
+################### DISPLAY ####################
+[display]
+## ascii options: "PACMAN_DEFAULT", "PACMAN_SMALL", "NONE", or a file path
+ascii = "PACMAN_DEFAULT"
+ascii_color = "yellow"
+
+# Image takes precedence when set
+# image = "~/.config/pacfetch/example_image.png"
+
+# Available stats: installed, upgradable, last_update, download_size, installed_size,
+# net_upgrade_size, orphaned_packages, cache_size, disk, mirror_url, mirror_health,
+# colors, colors_dark, colors_light
+stats = [
+    "title.header",
+    "installed",
+    "upgradable",
+    "last_update",
+    "download_size",
+    "installed_size",
+    "net_upgrade_size",
+    "disk",
+    "orphaned_packages",
+    "cache_size",
+    "mirror_url",
+    "mirror_health",
+    "colors",
+]
+
+[display.glyph]
+glyph = ": "
+color = "none"
+
+################### PALETTE ####################
+# Built-in styles: "blocks" (background-colored), "dots" (● foreground), "ghosts" (󰊠 nerd font)
+# Any other value is used as a custom character with foreground color.
+[display.palette]
+style = "blocks"
+spacing = 0 
+
+################### COLORS ####################
+# Global stat colors. All support color names, hex (#RRGGBB), or "none".
+[display.colors]
+label = "bright_yellow"
+stat = "none"
+
+# Per-stat color overrides (takes precedence over global)
+# [display.colors.installed]
+# label = "bright_green"
+# stat = "white"
+
+################### LABELS ####################
+# Override label text for individual stats.
+# Keys: installed, upgradable, last_update, download_size, installed_size,
+# net_upgrade_size, orphaned_packages, cache_size, disk, mirror_url, mirror_health
+# [display.labels]
+# installed = "Pkgs"
+# cache_size = "Cache"
+
+################### TITLES ####################
+# Define named titles under [display.titles.{name}]
+# Reference them in the stats array as "title.{name}"
+#
+# Options:
+#   text        = "default" | "pacman_ver" | "pacfetch_ver" | "" | custom string
+#   text_color  = color name, hex, or "none"
+#   line_color  = color name, hex, or "none"
+#   style       = "stacked" | "embedded" 
+#   width       = "title" | "content": longest string in output | integer
+#   align       = "left" | "center" | "right" (default: left for stacked, center for embedded)
+#   line        = line characters
+#   left_cap    = left cap character for embedded style
+#   right_cap   = right cap character for embedded style
+#   padding     = integer: indents content and extends title)
+
+[display.titles.header]
+text = "default"
+text_color = "bright_yellow"
+line_color = "none"
+style = "stacked"
+width = "title"
+line = "-"
+
+
+# example embedded title
+# [display.titles.header]
+# text = "default"
+# text_color = "bright_yellow"
+# line_color = "none"
+# style = "embedded"
+# width = "content"
+# line = "─"
+# left_cap = "╭"
+# right_cap = "╮"
+# padding = 2
+
+
+################### DISK ####################
+[disk]
+path = "/"
+
+################### CACHE ####################
+[cache]
+# Set to 0 to always sync fresh
+ttl_minutes = 15

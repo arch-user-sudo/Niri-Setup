@@ -1,0 +1,39 @@
+* {
+all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+
+.mybar {
+	color: #b0b4bc;
+	background-color: rgba(0, 0, 0, 1);
+	margin: 0px;
+	font-size: 14px;
+	font-family: Ubuntu ;
+	padding: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+
+
+}	
+
+
+button {
+  background: transparent;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 6px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+button:hover {
+  background: #444;   /* highlight effect */
+  color: #00ffcc;     /* change text color on hover */
+ 
+}
+

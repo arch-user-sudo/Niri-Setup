@@ -1,0 +1,8 @@
+[2026-02-19 11:32:36.405] [info] Using configuration file /home/lynch/.config/waybar/config.jsonc
+[2026-02-19 11:32:36.407] [info] Discovered appearance 'dark'
+[2026-02-19 11:32:36.432] [info] Using CSS file /home/lynch/.config/waybar/style.css
+[2026-02-19 11:32:36.475] [info] Bar configured (width: 225, height: 26) for output: DP-1
+[2026-02-19 12:29:32.630] [info] Bar configured (width: 245, height: 26) for output: DP-1
+[2026-02-19 12:29:32.630] [error] Item '': No icon name or pixmap given.
+[2026-02-19 12:29:32.696] [info] Bar configured (width: 261, height: 26) for output: DP-1
+Gdk-Message: 12:31:19.398: Error reading events from display: Connection reset by peer
