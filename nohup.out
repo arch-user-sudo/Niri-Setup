@@ -1,0 +1,4 @@
+[2026-03-15T21:44:11Z ERROR rwaybar::item] Error parsing temp1: No matches found for glob '/sys/block/nvme0n1/device/hwmon*/temp1_input'
+/bin/sh: line 1: /home/daniel/bin/weather-widget: No such file or directory
+Io error: Broken pipe (os error 32)
+[2026-03-15T22:15:16Z ERROR rwaybar::util] wayland read: Io error: Broken pipe (os error 32)

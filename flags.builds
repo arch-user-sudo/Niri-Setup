@@ -178,3 +178,9 @@ sudo setcap 'cap_sys_nice=eip' $(which niri)
 sudo nice -n -5 niri --session
 
 sudo renice -n -5 -p $(pidof niri)
+
+❯ CFLAGS="-O2 -march=native -mtune=native" \
+      CXXFLAGS="-O2 -march=native -mtune=native" \
+      meson setup build
+
+      ❯ make -j4 KCFLAGS="-O2 -march=native"
